@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6356a549-5554-4610-8e37-7ce706cd9878" name="Default" comment="" />
+    <list default="true" id="6356a549-5554-4610-8e37-7ce706cd9878" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Block.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Call.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DmTraceReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main.kt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MethodData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ProfileData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ProfileNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ProfileProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ProfileSelf.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Record.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Row.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThreadData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TimeBase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TraceAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TraceReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TraceUnits.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,6 +127,11 @@
             <path>
               <item name="TraceAnalyze" type="b2602c69:ProjectViewProjectNode" />
               <item name="TraceAnalyze" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TraceAnalyze" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TraceAnalyze" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,14 +320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProfileData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-585">
@@ -326,7 +340,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="32" column="55" lean-forward="false" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-          <folding />
+          <folding>
+            <element signature="e#1289#1290#0" expanded="false" />
+            <element signature="e#1359#1360#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -378,18 +395,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProfileProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
