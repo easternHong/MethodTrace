@@ -46,7 +46,7 @@ public class DmTraceReader extends TraceReader {
 
     private enum ClockSource {
         THREAD_CPU, WALL, DUAL,
-    };
+    }
 
     private int mVersionNumber;
     private boolean mRegression;
@@ -65,8 +65,13 @@ public class DmTraceReader extends TraceReader {
     private int mRecordSize;
     private ClockSource mClockSource;
 
+    private DumpFilter dumpFilter;
     // A regex for matching the thread "id name" lines in the .key file
     private static final Pattern mIdNamePattern = Pattern.compile("(\\d+)\t(.*)");  //$NON-NLS-1$
+
+    public void setDumpFilter(DumpFilter dumpFilter) {
+        this.dumpFilter = dumpFilter;
+    }
 
     public DmTraceReader(String traceFileName, boolean regression) throws IOException {
         mTraceFileName = traceFileName;
@@ -82,10 +87,9 @@ public class DmTraceReader extends TraceReader {
         mContextSwitch = new MethodData(-1, "(context switch)");
         mMethodMap.put(0, mTopLevel);
         mMethodMap.put(-1, mContextSwitch);
-        generateTrees();
     }
 
-    void generateTrees() throws IOException {
+    public void generateTrees() throws IOException {
         long offset = parseKeys();
         parseData(offset);
         analyzeData();
@@ -133,7 +137,7 @@ public class DmTraceReader extends TraceReader {
         if (version < 1 || version > 3) {
             System.err.printf(
                     "Error: unsupported trace version number %d.  "
-                    + "Please use a newer version of TraceView to read this file.", version);
+                            + "Please use a newer version of TraceView to read this file.", version);
             throw new RuntimeException();
         }
 
@@ -173,7 +177,7 @@ public class DmTraceReader extends TraceReader {
 
         // Parse all call records to obtain elapsed time information.
         ThreadData prevThreadData = null;
-        for (;;) {
+        for (; ; ) {
             int threadId;
             int methodId;
             long threadTime, globalTime;
@@ -439,19 +443,19 @@ public class DmTraceReader extends TraceReader {
                     }
                 }
                 switch (mode) {
-                case PARSE_VERSION:
-                    mVersionNumber = Integer.decode(line);
-                    mode = PARSE_OPTIONS;
-                    break;
-                case PARSE_THREADS:
-                    parseThread(line);
-                    break;
-                case PARSE_METHODS:
-                    parseMethod(line);
-                    break;
-                case PARSE_OPTIONS:
-                    parseOption(line);
-                    break;
+                    case PARSE_VERSION:
+                        mVersionNumber = Integer.decode(line);
+                        mode = PARSE_OPTIONS;
+                        break;
+                    case PARSE_THREADS:
+                        parseThread(line);
+                        break;
+                    case PARSE_METHODS:
+                        parseMethod(line);
+                        break;
+                    case PARSE_OPTIONS:
+                        parseOption(line);
+                        break;
                 }
             }
         } catch (FileNotFoundException ex) {
@@ -666,6 +670,9 @@ public class DmTraceReader extends TraceReader {
         System.out.print("\nMethod Stats\n");
         System.out.print("Excl Cpu  Incl Cpu  Excl Real Incl Real    Calls  Method\n");
         for (MethodData md : mSortedMethods) {
+            if (dumpFilter != null && !dumpFilter.allow(md.getProfileName())) {
+                continue;
+            }
             System.out.format("%9d %9d %9d %9d %9s  %s\n",
                     md.getElapsedExclusiveCpuTime(), md.getElapsedInclusiveCpuTime(),
                     md.getElapsedExclusiveRealTime(), md.getElapsedInclusiveRealTime(),
