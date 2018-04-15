@@ -397,8 +397,8 @@ public class DmTraceReader extends TraceReader {
             System.out.format("totalCpuTime %dus\n", mTotalCpuTime);
             System.out.format("totalRealTime %dus\n", mTotalRealTime);
 
-            dumpThreadTimes();
-            dumpCallTimes();
+//            dumpThreadTimes();
+//            dumpCallTimes();
         }
     }
 
@@ -407,7 +407,7 @@ public class DmTraceReader extends TraceReader {
     static final int PARSE_METHODS = 2;
     static final int PARSE_OPTIONS = 4;
 
-    long parseKeys() throws IOException {
+    private long parseKeys() throws IOException {
         long offset = 0;
         BufferedReader in = null;
         try {
@@ -473,7 +473,7 @@ public class DmTraceReader extends TraceReader {
         return offset;
     }
 
-    void parseOption(String line) {
+    private void parseOption(String line) {
         String[] tokens = line.split("=");
         if (tokens.length == 2) {
             String key = tokens[0];
@@ -646,6 +646,9 @@ public class DmTraceReader extends TraceReader {
         System.out.print("\nThread Times\n");
         System.out.print("id  t-start    t-end  g-start    g-end     name\n");
         for (ThreadData threadData : mThreadMap.values()) {
+            if (dumpFilter != null && !dumpFilter.allow(threadData.getName())) {
+                continue;
+            }
             System.out.format("%2d %8d %8d %8d %8d  %s\n",
                     threadData.getId(),
                     threadData.mThreadStartTime, threadData.mThreadEndTime,
@@ -658,6 +661,9 @@ public class DmTraceReader extends TraceReader {
         System.out.print("\nCall Times\n");
         System.out.print("id  t-start    t-end  g-start    g-end    excl.    incl.  method\n");
         for (Call call : mCallList) {
+            if (dumpFilter != null && !dumpFilter.allow(call.getMethodData().getName())) {
+                continue;
+            }
             System.out.format("%2d %8d %8d %8d %8d %8d %8d  %s\n",
                     call.getThreadId(), call.mThreadStartTime, call.mThreadEndTime,
                     call.mGlobalStartTime, call.mGlobalEndTime,

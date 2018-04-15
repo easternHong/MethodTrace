@@ -34,7 +34,13 @@ class ThreadData implements Row {
     long mGlobalEndTime;
 
     boolean mHaveThreadTime;
+    /**
+     * 函数执行开始，线程时间
+     */
     long mThreadStartTime;
+    /**
+     * 函数执行结束，线程时间
+     */
     long mThreadEndTime;
 
     long mThreadCurrentTime; // only used while parsing thread-cpu clock
