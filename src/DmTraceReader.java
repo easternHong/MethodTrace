@@ -14,21 +14,12 @@
  * limitations under the License.
  */
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -66,11 +57,16 @@ public class DmTraceReader extends TraceReader {
     private ClockSource mClockSource;
 
     private DumpFilter dumpFilter;
+    private FormatListener formatListener;
     // A regex for matching the thread "id name" lines in the .key file
     private static final Pattern mIdNamePattern = Pattern.compile("(\\d+)\t(.*)");  //$NON-NLS-1$
 
     public void setDumpFilter(DumpFilter dumpFilter) {
         this.dumpFilter = dumpFilter;
+    }
+
+    public void setFormatListener(FormatListener formatListener) {
+        this.formatListener = formatListener;
     }
 
     public DmTraceReader(String traceFileName, boolean regression) throws IOException {
@@ -646,9 +642,6 @@ public class DmTraceReader extends TraceReader {
         System.out.print("\nThread Times\n");
         System.out.print("id  t-start    t-end  g-start    g-end     name\n");
         for (ThreadData threadData : mThreadMap.values()) {
-            if (dumpFilter != null && !dumpFilter.allow(threadData.getName())) {
-                continue;
-            }
             System.out.format("%2d %8d %8d %8d %8d  %s\n",
                     threadData.getId(),
                     threadData.mThreadStartTime, threadData.mThreadEndTime,
@@ -661,9 +654,6 @@ public class DmTraceReader extends TraceReader {
         System.out.print("\nCall Times\n");
         System.out.print("id  t-start    t-end  g-start    g-end    excl.    incl.  method\n");
         for (Call call : mCallList) {
-            if (dumpFilter != null && !dumpFilter.allow(call.getMethodData().getName())) {
-                continue;
-            }
             System.out.format("%2d %8d %8d %8d %8d %8d %8d  %s\n",
                     call.getThreadId(), call.mThreadStartTime, call.mThreadEndTime,
                     call.mGlobalStartTime, call.mGlobalEndTime,
@@ -676,13 +666,16 @@ public class DmTraceReader extends TraceReader {
         System.out.print("\nMethod Stats\n");
         System.out.print("Excl Cpu  Incl Cpu  Excl Real Incl Real    Calls  Method\n");
         for (MethodData md : mSortedMethods) {
-            if (dumpFilter != null && !dumpFilter.allow(md.getProfileName())) {
+            if (dumpFilter != null && !dumpFilter.allow(md)) {
                 continue;
             }
             System.out.format("%9d %9d %9d %9d %9s  %s\n",
                     md.getElapsedExclusiveCpuTime(), md.getElapsedInclusiveCpuTime(),
                     md.getElapsedExclusiveRealTime(), md.getElapsedInclusiveRealTime(),
                     md.getCalls(), md.getProfileName());
+        }
+        if (formatListener != null) {
+            formatListener.finish();
         }
     }
 

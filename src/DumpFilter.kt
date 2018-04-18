@@ -1,8 +1,9 @@
-
-
-
 interface DumpFilter {
 
 
-    fun allow(content: String): Boolean
+    fun allow(methodData: MethodData): Boolean
+}
+
+interface FormatListener {
+    fun finish()
 }

@@ -17,7 +17,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class ThreadData implements Row {
+public class ThreadData implements Row {
 
     private int mId;
     private String mName;
