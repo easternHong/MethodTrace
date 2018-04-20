@@ -5,7 +5,7 @@
 
 本工程目的：分析函数执行时间分析脚本化。
 
-[此工程基于源码-Android-7.0.0_r35](https:android.googlesource.com/platform/tools/swt/+/android-7.0.0_r35)
+[此工程基于源码-Android-7.0.0_r35](https://android.googlesource.com/platform/tools/swt/+/android-7.0.0_r35)
 
 源码具有分析xxx.trace文件的功能。
 
