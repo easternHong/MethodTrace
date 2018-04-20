@@ -180,7 +180,7 @@ public class ApkUtils {
     public static void main(String[] args) {
         try {
             final IConfig config = new ConfigImpl();
-            File[] files = new File("/home/g8489/yymobile_client-7.7.0-SNAPSHOT-59724-official/lib/armeabi-v7a").listFiles(new FilenameFilter() {
+            File[] files = new File("/home/g8489/mappings/对比/yymobile_client-7.7.0-SNAPSHOT-59724-official/lib/armeabi-v7a").listFiles(new FilenameFilter() {
                 @Override
                 public boolean accept(File file, String s) {
                     final String pkgName = s.replace("lib", "")

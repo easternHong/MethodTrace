@@ -2,102 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6356a549-5554-4610-8e37-7ce706cd9878" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okhttp3_okhttp_3_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okhttp-3.3.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okhttp-3.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okio-1.8.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okio-1.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/com/yy/utils/Logger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/mapping/IMapping.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/mapping/Mappings$Companion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/mapping/Mappings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/revert/RevertMethod.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/revert/SignatureConverter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Block.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Call$TraceAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Call.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/DmTraceReader$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/DmTraceReader$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/DmTraceReader$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/DmTraceReader$ClockSource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/DmTraceReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/DumpFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/FormatListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$rootFile$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/MethodData$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/MethodData$Sorter$Column.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/MethodData$Sorter$Direction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/MethodData$Sorter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/MethodData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/ProfileData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/ProfileNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/ProfileProvider.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/ProfileSelf.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Record.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Row.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/ThreadData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TimeBase$CpuTimeBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TimeBase$RealTimeBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TimeBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TraceAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TraceReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TraceUnits$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TraceUnits$TimeScale.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/TraceUnits.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/CloseUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/ConfigImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/Constant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/FileUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/FileUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/IConfig$PackageFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/IConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/Log.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/ReflectUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/ReflectUtils$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/ReflectUtils$NULL.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/ReflectUtils$ReflectException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/ReflectUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/TextUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/ApkInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/ApkUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/ApkUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/IconUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/ImpliedFeature.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mapping/IMapping.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/trace/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ConfigImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/IConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/apk/ApkInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/apk/IconUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/apk/ImpliedFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diff/PackageDiff.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceAnalyze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TraceAnalyze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Call.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Call.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DmTraceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/DmTraceReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DumpFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/DumpFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MethodData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/MethodData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/ProfileData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/ProfileNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/ProfileProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileSelf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/ProfileSelf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Row.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ThreadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/ThreadData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TimeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/TimeBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TraceAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/TraceAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TraceReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/TraceReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TraceUnits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/TraceUnits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/Mappings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/Mappings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/revert/RevertMethod.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/revert/RevertMethod.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$rootFile$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main$main$rootFile$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/trace/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/ApkUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TraceAnalyze/utils/apk/ApkUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trace/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,13 +25,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
+      <file leaf-file-name="PackageDiff.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/diff/PackageDiff.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="256">
+              <caret line="55" column="35" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="35" />
               <folding>
-                <element signature="e#15#142#0" expanded="true" />
+                <element signature="e#14#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,43 +42,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>string</find>
-      <find>sqlite</find>
-      <find>org</find>
-      <find>kotlin</find>
-      <find>okhttp</find>
-      <find>libcore</find>
-      <find>android/app</find>
-      <find>dalvik</find>
-      <find>jakewharton</find>
-      <find>reactivex</find>
-      <find>Unsafe</find>
-      <find>sun</find>
-      <find>android/</find>
-      <find>android/util</find>
-      <find>telephony</find>
-      <find>internal</find>
-      <find>bluetooth</find>
-      <find>facebook</find>
-      <find>YLog</find>
-      <find>main/</find>
-      <find>Mainac</find>
-      <find>main</find>
-      <find>readfile</find>
-      <find>IL</find>
-      <find>dumpFilter</find>
-      <find>log$default</find>
       <find>versioncode</find>
       <find>.so</find>
       <find>_</find>
       <find>lib</find>
+      <find>io</find>
+      <find>libcore</find>
+      <find>database</find>
+      <find>/text/</find>
+      <find>android/app</find>
+      <find>sun</find>
+      <find>security</find>
+      <find>logger</find>
+      <find>crashreport</find>
+      <find>com/android/org</find>
+      <find>android/net</find>
+      <find>com/android/server</find>
+      <find>PluginEntryPoint</find>
+      <find>initializeWithDefaults</find>
+      <find>PerformanceMonitorSwitchController</find>
+      <find>StatisticService</find>
+      <find>register</find>
+      <find>onCreate</find>
+      <find>MessageNotifyManager</find>
+      <find>updateSwitch</find>
+      <find>registerProcessor</find>
+      <find>Binder</find>
+      <find>readf</find>
+      <find>InputStreamReader</find>
+      <find>:</find>
+      <find>4</find>
     </findStrings>
     <replaceStrings>
       <replace>.</replace>
@@ -191,10 +107,8 @@
         <option value="$PROJECT_DIR$/src/ThreadData.java" />
         <option value="$PROJECT_DIR$/src/utils/CloseUtils.java" />
         <option value="$PROJECT_DIR$/src/utils/TextUtils.java" />
-        <option value="$PROJECT_DIR$/src/utils/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/utils/Log.java" />
         <option value="$PROJECT_DIR$/src/map/Mappings.kt" />
-        <option value="$PROJECT_DIR$/src/utils/Constant.java" />
         <option value="$PROJECT_DIR$/src/revert/SignatureConverter.kt" />
         <option value="$PROJECT_DIR$/src/DumpFilter.kt" />
         <option value="$PROJECT_DIR$/src/DmTraceReader.java" />
@@ -209,18 +123,21 @@
         <option value="$PROJECT_DIR$/src/utils/apk/ApkInfo.java" />
         <option value="$PROJECT_DIR$/src/utils/apk/ImpliedFeature.java" />
         <option value="$PROJECT_DIR$/src/utils/apk/IconUtil.java" />
-        <option value="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" />
         <option value="$PROJECT_DIR$/src/utils/IConfig.kt" />
         <option value="$PROJECT_DIR$/src/mapping/Mappings.kt" />
+        <option value="$PROJECT_DIR$/src/utils/FileUtils.java" />
+        <option value="$PROJECT_DIR$/src/utils/Constant.java" />
         <option value="$PROJECT_DIR$/src/trace/Main.kt" />
+        <option value="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" />
+        <option value="$PROJECT_DIR$/src/diff/PackageDiff.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="6" />
-    <option name="width" value="1853" />
-    <option name="height" value="1076" />
+    <option name="x" value="515" />
+    <option name="y" value="95" />
+    <option name="width" value="1851" />
+    <option name="height" value="1068" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -228,7 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,18 +157,13 @@
               <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MethodTrace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="trace" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.trace.Main">
+  <component name="RunManager" selected="Kotlin.diff.PackageDiff">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -314,6 +225,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="FileUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.FileUtils" />
+      <module name="TraceAnalyze" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -332,6 +254,16 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
+    </configuration>
+    <configuration name="diff.PackageDiff" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="TraceAnalyze" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="diff.PackageDiff" />
+      <option name="WORKING_DIRECTORY" />
     </configuration>
     <configuration name="trace.Main" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="TraceAnalyze" />
@@ -379,11 +311,15 @@
       <item itemvalue="Application.Constant" />
       <item itemvalue="Kotlin.trace.Main" />
       <item itemvalue="Application.ApkUtils" />
+      <item itemvalue="Application.FileUtils" />
+      <item itemvalue="Kotlin.diff.PackageDiff" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.trace.Main" />
+        <item itemvalue="Kotlin.diff.PackageDiff" />
         <item itemvalue="Application.ApkUtils" />
+        <item itemvalue="Kotlin.trace.Main" />
+        <item itemvalue="Application.FileUtils" />
         <item itemvalue="Application.Constant" />
       </list>
     </recent_temporary>
@@ -402,28 +338,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3279396" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279396" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.600863" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.609493" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12285556" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3171521" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6092573" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24681793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6040993" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5631068" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -432,32 +369,32 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.329602" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36924803" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.12853186" />
-      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="4" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="5" />
-      <window_info id="UI Designer" order="1" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329602" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.28170595" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30528587" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24681793" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36030206" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6106965" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6092573" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32884398" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279396" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -479,11 +416,21 @@
           <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="95" />
+      <option name="time" value="149" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>line.contains(&quot;com.yy.mobile.ui.setting.DownLoadNotification&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>line.contains(&quot;DownLoadNotification&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>methodData.methodName.equals(&quot;log\$default&quot;)</expression-string>
         <language-id>kotlin</language-id>
@@ -497,55 +444,74 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>response.</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>response.body().contentLength()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>response.body().toString()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>response.body()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new File(&quot;/home/g8489/lib/libcom_duowan_mobile_main.apk&quot;).exists()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Boolean.class</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>file.exists()</expression-string>
+        <expression-string>oldMap.get(&quot;AdPosMonitorImpDartsInnerInstance&quot;)</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>file</expression-string>
+        <expression-string>newMap.get(&quot;AdPosMonitorImpDartsInnerInstance&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>newMap.get(&quot;com.yy.mobile.ui.home.FollowLiveNotLivingDetailActivity&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>newMap.get(&quot;com.yy.mobile.ui.home.MainActivity\$18\$1&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>leftMap.get(&quot;com.alibaba.android.arouter.routes.ARouter\$\$Group\$\$Follow\$\$client&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>leftMap.get(&quot;com.alibaba.android.arouter.routes.ARouter\$$Group\$$Follow\$$client&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>leftMap.get(&quot;android.support.graphics.drawable.R&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>leftMap.get(&quot;com.yy.mobile.ui.common.JsSupportWebAcitivity\$\$EventBinder\$1&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>leftMap.get(&quot;com.yy.mobile.ui.common.JsSupportWebAcitivity\$$EventBinder\$1&quot;)</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/diff/PackageDiff.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding>
+            <element signature="e#14#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#15#122#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -555,8 +521,6 @@
           <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5046#5047#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,9 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#15#122#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,9 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#15#122#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,33 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="54" column="54" lean-forward="true" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Void.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#278#294#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/revert/RevertMethod.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/mapping/IMapping.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -840,20 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,11 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2535#2536#0" expanded="true" />
-            <element signature="e#2585#2586#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,18 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/apk/ApkUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4249">
-          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5046#5047#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,19 +816,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
+    <entry file="file://$PROJECT_DIR$/src/revert/RevertMethod.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        <state relative-caret-position="330">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="78" column="5" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="78" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="18" />
+        <state relative-caret-position="1606">
+          <caret line="80" column="57" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1408">
+          <caret line="68" selection-start-line="68" selection-end-line="75" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/apk/ApkUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="182" column="122" selection-start-line="182" selection-start-column="122" selection-end-line="182" selection-end-column="122" />
           <folding>
-            <element signature="e#15#142#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/SortedMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diff/PackageDiff.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="55" column="35" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="e#14#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
