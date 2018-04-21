@@ -9,8 +9,9 @@ class RevertMethod {
     var methodName = ""
     var signature = ArrayList<String>()
     var clazzName = ""
+    var rawClazzName = ""
     override fun toString(): String {
-        return "RevertMethod(methodName='$methodName', signature=$signature, clazzName='$clazzName')"
+        return "RevertMethod(pluginPkgName='$pluginPkgName', methodName='$methodName', signature=$signature, clazzName='$clazzName', rawClazzName='$rawClazzName')"
     }
 
 }

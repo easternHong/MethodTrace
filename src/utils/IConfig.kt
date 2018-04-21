@@ -3,6 +3,7 @@ package utils
 
 abstract class IConfig {
 
+    var aAptFile: String = ""
     protected var mappingsFilePaths = ArrayList<String>()
     /**
      * 读取mapping文件列表
@@ -13,6 +14,9 @@ abstract class IConfig {
         this.mappingsFilePaths = mappingsFilePaths
     }
 
+    var hostVersion: String = ""
+    var buildBranch: String? = null
+
     private var packageFilter: PackageFilter? = null
     /**
      * 内置插件列表
@@ -21,9 +25,14 @@ abstract class IConfig {
     /**
      * 插件仓库路径
      */
-    protected val mBuiltInPluginRepo = HashMap<String, String>()
+    var mBuiltInPluginRepo = HashMap<String, String>()
 
-    protected val mBuiltInPluginVersionCode = HashMap<String, String>()
+    /**
+     * 是否不需要下载mapping
+     */
+    var skipDownloadMapping = false
+
+    var mBuiltInPluginVersionCode = HashMap<String, String>()
 
     init {
         mBuiltInPlugins["com.yy.mobile.share"] = "com.yy.mobile.share"
@@ -38,7 +47,17 @@ abstract class IConfig {
         mBuiltInPlugins["com.yy.mobile.plugin.dolls"] = "com.yy.mobile.plugin.dolls"
         mBuiltInPlugins["com.duowan.mobile.entlive"] = "com.duowan.mobile.entlive"
 
-        mBuiltInPlugins["com.yy.mobile.plugin.main"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginmain/pluginmain-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.share"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginshare/pluginshare-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.main"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginmain/pluginmain-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.qupaishenqu"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginentshenqu/pluginentshenqu-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.ycloud"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginycloud/pluginycloud-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.reactnative"] = "http://repo.yypm.com/dwbuild/mobile/android/rnplugin/rnplugin-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.playtogether"] = "http://repo.yypm.com/dwbuild/mobile/android/playtogether/playtogether-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.onepiece"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginonepiece/pluginonepiece-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.moment"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginmoment/pluginmoment-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.im"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginim/pluginim-%s/"
+        mBuiltInPluginRepo["com.yy.mobile.plugin.dolls"] = "http://repo.yypm.com/dwbuild/mobile/android/plugindolls/plugindolls-%s/"
+        mBuiltInPluginRepo["com.duowan.mobile.entlive"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginentlive/pluginentlive-%s/"
     }
 
     fun getBuiltInPlugins(): Map<String, String> {

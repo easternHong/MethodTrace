@@ -18,14 +18,14 @@ object Main {
         var time = System.currentTimeMillis()
         val mConfig = ConfigImpl()
         val mapList = ArrayList<String>()
-        val rootFile = File("/home/g8489/mappings")
+
+        File("/home/g8489/mappings")
                 .list { p0, p1 ->
                     mapList.add(p0.absolutePath.plus(File.separator).plus(p1))
                     true
                 }
         mConfig.setPackageFilter(object : IConfig.PackageFilter {
             override fun pluginAllow(pluginName: String): Boolean {
-//                if (pluginName.contains("ycloud")) return false
                 return true
             }
 
@@ -97,22 +97,24 @@ object Main {
                 if (methodData.className.contains("/text/")) return false
                 if (methodData.className.contains("android/app")) return false
                 if (methodData.className.contains("log")) return false
-                val tmpClassName = methodData.className.replace("/", ".")
-//                if (pkgMap.containsKey(tmpClassName)) {
-//                println(tmpClassName.plus(pkgMap.containsKey(tmpClassName)))
-//                if (methodData.elapsedExclusiveCpuTime < 30) return false
+                if (methodData.className.isEmpty()) return false
+                if (methodData.className.contains("Darts")) return false
+                if (methodData.className.contains("Executor")) return false
+                if (methodData.className.contains("Xposed")) return false
                 formatMethod(methodData, revertMethodList)
-//                    return true
-//                }
                 return true
             }
         })
         reader.setFormatListener(object : FormatListener {
             override fun finish() {
+                for (method in revertMethodList) {
+                    val pair = pkgMap[method.clazzName]
+                    if (pair != null) {
+                        method.rawClazzName = pair.second
+                    }
+                }
                 println(Gson().toJson(revertMethodList))
                 println("需要hook函数个数:".plus(revertMethodList.size))
-
-
             }
         })
         reader.generateTrees()
@@ -120,7 +122,7 @@ object Main {
 
     private fun formatMethod(methodData: MethodData, list: ArrayList<RevertMethod>) {
         val method = RevertMethod()
-        method.clazzName = methodData.className
+        method.clazzName = methodData.className.replace("/", ".")
         method.methodName = methodData.methodName
         val signatureList = SignatureConverter.convertMethodSignature("", methodData.signature)
                 .replace("(", "").replace(")", "").replace(" ", "")

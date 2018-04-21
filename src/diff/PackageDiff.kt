@@ -13,7 +13,6 @@ object PackageDiff {
         val newMap = getClasses("/home/g8489/diff/6323-main.txt")
         val keySet = HashSet(newMap.keys)
         val newAddClassList = ArrayList<String>()
-        println("start")
         for (key in keySet) {
             val clazzOld = oldMap[key]
             val clazzNew = newMap[key]
@@ -24,16 +23,14 @@ object PackageDiff {
             if (clazzOld == null) {
                 newAddClassList.add(key)
             }
-            if (key.contains("$$$")) {
-                println(key)
-            }
         }
-        val oldValues = TreeSet(oldMap.values)
-        val newValues = TreeSet(newMap.values)
+        val oldValues = TreeSet(oldMap.values).sorted()
+        val newValues = TreeSet(newMap.values).sorted()
 
-        println(oldValues.size)
-        println(newValues.size)
-        println("newClass:" + newAddClassList.size)
+
+        println("旧版本：".plus(oldValues.size))
+        println("新版本：".plus(newValues.size))
+        println("新增类数量:" + newAddClassList.size)
     }
 
     private fun getClasses(filePath: String): HashMap<String, ClassDesc> {
@@ -57,7 +54,10 @@ object PackageDiff {
                         } else continue
                     }
                     if (pkgName.isEmpty()) continue
-                    map[pkgName] = ClassDesc()
+                    if (pkgName.contains("R$")) continue
+                    val claxx = ClassDesc()
+                    claxx.pkgName = pkgName
+                    map[pkgName] = claxx
                 } else {
                     val classDesc = map[pkgName]
                     if (line.contains("(")) {
@@ -69,12 +69,15 @@ object PackageDiff {
                         if (line.contains("<init>")) continue //忽略构造函数
                         if (line.contains("<clinit>")) continue //忽略构造函数
                         classDesc?.pkgName = pkgName
+                        if (line.contains(" ") && line.contains("access$") && pkgName.contains("DartsInner")) {
+                            print("")
+                            line = line.substring(0, line.indexOf("access$") - 1)
+                        }
                         classDesc?.methodList?.add(line)
                     } else {
                         //field
                         val field = line.substring(0, line.indexOf("->")).trim()
                         classDesc?.filedList?.add(field)
-                        println("field:$field")
                     }
                 }
             }

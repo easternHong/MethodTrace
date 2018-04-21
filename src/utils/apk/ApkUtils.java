@@ -3,6 +3,7 @@ package utils.apk;
 
 import utils.ConfigImpl;
 import utils.IConfig;
+import utils.TextUtils;
 
 import java.io.*;
 
@@ -55,10 +56,13 @@ public class ApkUtils {
      * @param apkPath apk的路径。
      * @return apkInfo 一个Apk的信息。
      */
-    public ApkInfo getApkInfo(String apkPath) throws Exception {
-
+    public ApkInfo getApkInfo(String aapt, String apkPath) throws Exception {
+//
         //通过命令调用aapt工具解析apk文件
-        Process process = mBuilder.command("/home/g8489/Android/sdk/build-tools/26.0.2/aapt", "d", "badging", apkPath)
+        if (TextUtils.isEmpty(aapt)) {
+            throw new IllegalArgumentException("aapt 路径为空");
+        }
+        Process process = mBuilder.command(aapt, "d", "badging", apkPath)
                 .start();
         InputStream is = null;
         is = process.getInputStream();
@@ -177,43 +181,42 @@ public class ApkUtils {
         }
     }
 
-    public static void main(String[] args) {
+    public static String getVersionCode(String aapt, File apkFile) {
+        try {
+            ApkInfo apkInfo = new ApkUtils().getApkInfo(aapt, apkFile.getAbsolutePath());
+            return apkInfo.getVersionCode();
+        } catch (Exception e) {
+            System.out.println("异常：" + e);
+            return "";
+        }
+    }
+
+    public static IConfig getVersionCode(String aapt, String apkPath) {
         try {
             final IConfig config = new ConfigImpl();
-            File[] files = new File("/home/g8489/mappings/对比/yymobile_client-7.7.0-SNAPSHOT-59724-official/lib/armeabi-v7a").listFiles(new FilenameFilter() {
-                @Override
-                public boolean accept(File file, String s) {
-                    final String pkgName = s.replace("lib", "")
-                            .replace("_", ".")
-                            .replace(".so", "").replace(" ", "");
-                    return config.getBuiltInPlugins().containsKey(pkgName);
-                }
+            final File apkFile = new File(apkPath);
+            if (!apkFile.exists()) {
+                throw new IllegalArgumentException("apk路径不对");
+            }
+            System.out.println("开始解压apk文件");
+            UnzipFiles.unpackZip(apkFile.getParent() + "/", apkFile.getName());
+            System.out.println("解压apk文件结束");
+            File[] files = new File(apkFile.getParent() + "/lib/armeabi-v7a").listFiles((file, s) -> {
+                final String pkgName = s.replace("lib", "")
+                        .replace("_", ".")
+                        .replace(".so", "").replace(" ", "");
+                return config.getBuiltInPlugins().containsKey(pkgName);
             });
+            assert files != null;
             for (File f : files) {
-                ApkInfo apkInfo = new ApkUtils().getApkInfo(f.getAbsolutePath());
+                ApkInfo apkInfo = new ApkUtils().getApkInfo(aapt, f.getAbsolutePath());
                 System.out.println(apkInfo.getPackageName() + ",versionCode:" + apkInfo.getVersionCode());
                 config.getBuiltInPluginVersionCode().put(apkInfo.getPackageName(), apkInfo.getVersionCode());
             }
-
-//            OkHttpClient client = new OkHttpClient();
-//            Call call = client.newCall(new Request.Builder()
-//                    .url("http://repo.yypm.com/dwbuild/mobile/android/pluginmain/pluginmain-android_7.7.0_dior_feature/")
-//                    .build());
-//            call.enqueue(new Callback() {
-//                @Override
-//                public void onFailure(Call call, IOException e) {
-//
-//                }
-//
-//                @Override
-//                public void onResponse(Call call, Response response) throws IOException {
-//                    System.out.println(response);
-//                }
-//            });
+            return config;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("出错了:" + e);
         }
-
     }
 
 }

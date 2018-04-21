@@ -10,7 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Created by hunt on 15-7-2.
+ * Created by ggg on 15-7-2.
  */
 public class CloseUtils {
     public static void close(Closeable closeable) {
