@@ -14,14 +14,16 @@ abstract class IConfig {
         this.mappingsFilePaths = mappingsFilePaths
     }
 
+    var traceFilePath = ""
     var hostVersion: String = ""
     var buildBranch: String? = null
+    var workingDir = ""
 
     private var packageFilter: PackageFilter? = null
     /**
      * 内置插件列表
      */
-    protected val mBuiltInPlugins = HashMap<String, String>()
+    private val mBuiltInPlugins = HashMap<String, String>()
     /**
      * 插件仓库路径
      */
@@ -30,7 +32,7 @@ abstract class IConfig {
     /**
      * 是否不需要下载mapping
      */
-    var skipDownloadMapping = false
+    var skipDownloadMapping = HashMap<String, Boolean>()
 
     var mBuiltInPluginVersionCode = HashMap<String, String>()
 

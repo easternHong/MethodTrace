@@ -219,4 +219,9 @@ public class ApkUtils {
         }
     }
 
+    public static void main(String[] args) {
+
+        getVersionCode("/home/g8489/Android/sdk/build-tools/26.0.2/aapt", "/home/g8489/yymobile_client-7.7.0-SNAPSHOT-59319-official.apk");
+    }
+
 }
