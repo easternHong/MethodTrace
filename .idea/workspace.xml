@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6356a549-5554-4610-8e37-7ce706cd9878" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapping/IMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/IMapping.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mapping/Mappings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/Mappings.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/revert/RevertMethod.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/revert/RevertMethod.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/trace/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ConfigImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ConfigImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Constant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/IConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/IConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" afterDir="false" />
     </list>
@@ -25,25 +24,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Mappings.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Mappings.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="138" column="45" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
+            <state relative-caret-position="291">
+              <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
               <folding>
-                <element signature="e#17#155#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
-              <folding>
-                <element signature="e#15#247#0" expanded="true" />
+                <element signature="e#17#227#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PluginEntryPoint</find>
-      <find>initializeWithDefaults</find>
       <find>PerformanceMonitorSwitchController</find>
       <find>StatisticService</find>
       <find>register</find>
@@ -88,9 +73,11 @@
       <find>new</find>
       <find>mapping链接获取</find>
       <find>6281</find>
-      <find />
+      <find>mConfig =</find>
       <find>rever</find>
       <find>com.yymobile.core.webbus.WebBusYYPProtocol$WebBusYYPReq</find>
+      <find>花费时间</find>
+      <find>pkgAllow</find>
     </findStrings>
     <replaceStrings>
       <replace>.</replace>
@@ -120,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/ThreadData.java" />
         <option value="$PROJECT_DIR$/src/utils/CloseUtils.java" />
         <option value="$PROJECT_DIR$/src/utils/TextUtils.java" />
-        <option value="$PROJECT_DIR$/src/utils/Log.java" />
         <option value="$PROJECT_DIR$/src/map/Mappings.kt" />
         <option value="$PROJECT_DIR$/src/revert/SignatureConverter.kt" />
         <option value="$PROJECT_DIR$/src/DumpFilter.kt" />
@@ -133,20 +119,22 @@
         <option value="$PROJECT_DIR$/src/utils/apk/ApkInfo.java" />
         <option value="$PROJECT_DIR$/src/utils/apk/ImpliedFeature.java" />
         <option value="$PROJECT_DIR$/src/utils/FileUtils.java" />
-        <option value="$PROJECT_DIR$/src/utils/Constant.java" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/diff/PackageDiff.kt" />
         <option value="$PROJECT_DIR$/src/utils/apk/UnzipFiles.java" />
         <option value="$PROJECT_DIR$/src/utils/DownloadUtil.java" />
         <option value="$PROJECT_DIR$/src/utils/apk/IconUtil.java" />
         <option value="$PROJECT_DIR$/src/utils/ConfigImpl.kt" />
-        <option value="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" />
-        <option value="$PROJECT_DIR$/src/utils/IConfig.kt" />
         <option value="$PROJECT_DIR$/src/test/Test.java" />
         <option value="$PROJECT_DIR$/src/mapping/IMapping.kt" />
-        <option value="$PROJECT_DIR$/src/revert/RevertMethod.kt" />
+        <option value="$PROJECT_DIR$/src/utils/Log.java" />
+        <option value="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" />
+        <option value="$PROJECT_DIR$/src/utils/IConfig.kt" />
+        <option value="$PROJECT_DIR$/src/utils/Constant.java" />
+        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/src/mapping/Mappings.kt" />
         <option value="$PROJECT_DIR$/src/trace/Main.kt" />
+        <option value="$PROJECT_DIR$/src/revert/RevertMethod.kt" />
       </list>
     </option>
   </component>
@@ -172,17 +160,6 @@
               <item name="MethodTrace" type="b2602c69:ProjectViewProjectNode" />
               <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MethodTrace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MethodTrace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -200,15 +177,16 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/trace" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/utils" />
-      <recent name="$PROJECT_DIR$/src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/trace" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -363,27 +341,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3279396" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279396" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.55987054" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3840345" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32901832" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6092573" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.60841423" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13779746" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09905922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49946064" weight="0.24958494" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.30528587" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42394823" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50053936" side_tool="true" weight="0.24958494" />
@@ -436,7 +413,7 @@
           <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="217" />
+      <option name="time" value="221" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -473,6 +450,31 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>File(&quot;../../../../config.json&quot;).exists()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>File(&quot;../../../config.json&quot;).exists()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>File(&quot;../config.json&quot;).exists()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>File(&quot;../../config.json&quot;).exists()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>File(&quot;../../config.json&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>map.get(&quot;android.arch.lifecycle.BuildConfig&quot;)</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -492,41 +494,9 @@
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>response.body().toString()</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>pkgMap</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>newMap.get(&quot;com.yy.mobile.ui.gallery.PhotoUploadActivity&quot;)</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>oldMap.get(&quot;com.yy.mobile.ui.gallery.PhotoUploadActivity&quot;)</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>newMap.get(&quot;FollowCoreImplDartsInnerInstance&quot;)</expression-string>
-        <language-id>kotlin</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trace/DmTraceReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5258">
@@ -738,20 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/SortedMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -822,30 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ConfigImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/apk/ApkUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="197" column="22" lean-forward="true" selection-start-line="197" selection-start-column="22" selection-end-line="197" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/IConfig.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
@@ -873,29 +805,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/revert/RevertMethod.kt">
+    <entry file="file://$PROJECT_DIR$/src/utils/Log.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="132">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding>
+            <element signature="e#89#90#0" expanded="true" />
+            <element signature="e#144#145#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
+    <entry file="file://$PROJECT_DIR$/src/utils/apk/ApkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="138" column="45" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
+        <state relative-caret-position="414">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
           <folding>
-            <element signature="e#17#155#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ConfigImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/IConfig.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="102" column="60" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
+        <state relative-caret-position="396">
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
           <folding>
-            <element signature="e#15#247#0" expanded="true" />
+            <element signature="e#15#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/revert/RevertMethod.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+          <folding>
+            <element signature="e#17#227#0" expanded="true" />
           </folding>
         </state>
       </provider>

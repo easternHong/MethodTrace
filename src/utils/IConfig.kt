@@ -14,6 +14,7 @@ abstract class IConfig {
         this.mappingsFilePaths = mappingsFilePaths
     }
 
+    var mApkDesc = ApkDesc("", "", "", "")
     var traceFilePath = ""
     var hostVersion: String = ""
     var buildBranch: String? = null
@@ -83,3 +84,7 @@ abstract class IConfig {
         fun pluginAllow(pluginName: String): Boolean
     }
 }
+
+data class ApkDesc(val apkFile: String, val version: String, val traceFile: String, val branchName: String)
+
+data class ConfigFile(val aapt: String, val oldApk: ApkDesc, val newApk: ApkDesc)

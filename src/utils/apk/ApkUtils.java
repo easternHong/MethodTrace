@@ -198,6 +198,9 @@ public class ApkUtils {
             if (!apkFile.exists()) {
                 throw new IllegalArgumentException("apk路径不对");
             }
+            ApkInfo apkInfo = new ApkUtils().getApkInfo(aapt, apkPath);
+            System.out.println(apkInfo.getPackageName() + ",host:" + apkInfo.getVersionCode());
+            config.setHostVersion(apkInfo.getVersionCode());
             System.out.println("开始解压apk文件");
             UnzipFiles.unpackZip(apkFile.getParent() + "/", apkFile.getName());
             System.out.println("解压apk文件结束");
@@ -209,7 +212,7 @@ public class ApkUtils {
             });
             assert files != null;
             for (File f : files) {
-                ApkInfo apkInfo = new ApkUtils().getApkInfo(aapt, f.getAbsolutePath());
+                apkInfo = new ApkUtils().getApkInfo(aapt, f.getAbsolutePath());
                 System.out.println(apkInfo.getPackageName() + ",versionCode:" + apkInfo.getVersionCode());
                 config.getBuiltInPluginVersionCode().put(apkInfo.getPackageName(), apkInfo.getVersionCode());
             }

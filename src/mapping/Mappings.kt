@@ -8,6 +8,7 @@ import revert.RawClass
 import utils.*
 import utils.apk.ApkUtils
 import java.io.*
+import java.util.*
 import kotlin.collections.set
 
 
@@ -18,44 +19,18 @@ class Mappings : IMapping {
     var mConfig: IConfig = ConfigImpl()
 
 
-    //    private fun downApkFile() {
-//        mConfig?.hostVersion = "59724"
-//
-//        try {
-//
-//             File apkFile =  File "/home/g8489/diff/yymobile_client-7.7.0-SNAPSHOT-59724-official.apk";
-//            if (!apkFile.exists()) {
-//                throw  IllegalArgumentException "apk路径不对";
-//            }
-//            System.out.println("开始解压apk文件");
-//            UnzipFiles.unpackZip(apkFile.getParent() + "/", apkFile.getName());
-//            System.out.println("解压apk文件结束");
-//            File[] files =  File(apkFile.getParent() + "/lib/armeabi-v7a").listFiles(file, s) -> {
-//                final String pkgName = s.replace("lib", "")
-//                        .replace("_", ".")
-//                        .replace(".so", "").replace(" ", "");
-//                return config.getBuiltInPlugins().containsKey(pkgName);
-//            });
-//            for (File f : files) {
-//                ApkInfo apkInfo =  ApkUtils().getApkInfo("", f.getAbsolutePath());
-//                System.out.println(apkInfo.getPackageName() + ",versionCode:" + apkInfo.getVersionCode());
-//                config.getBuiltInPluginVersionCode().put(apkInfo.getPackageName(), apkInfo.getVersionCode());
-//            }
-//            return config;
-//        } catch ( e: Exception) {
-//            throw  IllegalArgumentException ("出错了:$e")
-//        }
-//    }
     private fun preConfig() {
-        mConfig.traceFilePath = "/home/g8489/mappings/对比/59724/com.yy.mobile.plugin.main-20180419-122250.trace"
+        val apkDesc = mConfig.mApkDesc
+        mConfig.traceFilePath = apkDesc.traceFile
         mConfig.skipDownloadMapping["com.yy.mobile.qupaishenqu"] = true
-        mConfig.mBuiltInPluginVersionCode["host"] = "59724"
         mConfig.workingDir = "../tmp"
-        mConfig.buildBranch = "android_7.7.0_dior_feature"
-        mConfig.aAptFile = "/home/g8489/Android/sdk/build-tools/26.0.2/aapt"
-        val apkConfig = ApkUtils.getVersionCode(mConfig.aAptFile,
-                "/home/g8489/mappings/对比/yymobile_client-7.7.0-SNAPSHOT-59724-official.apk")
-        mConfig.mBuiltInPluginVersionCode.putAll(apkConfig.mBuiltInPluginVersionCode)
+        mConfig.buildBranch = apkDesc.branchName
+        if (TextUtils.isEmpty(mConfig.aAptFile)) {
+            mConfig.aAptFile = "/home/g8489/Android/sdk/build-tools/26.0.2/aapt"
+        }
+        val tmpConfig = ApkUtils.getVersionCode(mConfig.aAptFile, apkDesc.apkFile)
+        mConfig.mBuiltInPluginVersionCode["host"] = tmpConfig.hostVersion
+        mConfig.mBuiltInPluginVersionCode.putAll(tmpConfig.mBuiltInPluginVersionCode)
     }
 
     private fun downloadMappings() {
@@ -139,14 +114,12 @@ class Mappings : IMapping {
         val map = HashMap<String, RawClass>()
         val fileList = config.getMappings()
         for (path in fileList) {
-            if (config.getPackageFilter()?.pluginAllow(path)!!) {
-                map.putAll(collectClass(path))
-            }
+            map.putAll(collectClassMap(path))
         }
         return map
     }
 
-    private fun collectClass(filePath: String): Map<String, RawClass> {
+    private fun collectClassMap(filePath: String): Map<String, RawClass> {
         val file = File(filePath)
         val fileContent = HashMap<String, RawClass>()
         if (!file.isFile) {
@@ -172,7 +145,7 @@ class Mappings : IMapping {
                     }
                 } else {
                     //pkg
-                    val pair = extractPkg(line)
+                    val pair = extractPackageName(line)
                     if (!TextUtils.isEmpty(pair.first)) {
                         clazz = RawClass()
                         clazz.name = pair.first
@@ -214,53 +187,17 @@ class Mappings : IMapping {
     private fun formatMethod(line: String): MethodDesc {
         val methodDesc = MethodDesc()
         val array = line.trim().split(" ")
-        methodDesc.rType = array[0].substring(array[0].lastIndexOf(":") + 1)
-        methodDesc.name = array[1]
-        methodDesc.pName = array[3]
+        try {
+            methodDesc.rType = array[0].substring(array[0].lastIndexOf(":") + 1)
+            methodDesc.name = array[1]
+            methodDesc.pName = array[3]
+        } catch (e: Exception) {
+            println("错了:${(array)}")
+        }
         return methodDesc
     }
 
-    /**
-     * map查找key速度优于list
-     */
-    private fun parseMappings(filePath: String, charsetName: String): Map<String, Pair<String, String>> {
-        val file = File(filePath)
-        val fileContent = HashMap<String, Pair<String, String>>()
-        if (!file.isFile) {
-            return fileContent
-        }
-        var reader: BufferedReader? = null
-        try {
-            val `is` = InputStreamReader(FileInputStream(file), charsetName)
-            reader = BufferedReader(`is`)
-            while (true) {
-                val line = reader.readLine() ?: break
-                val pkgPair = extractPkg(line)
-                if (!TextUtils.isEmpty(pkgPair.first)) {
-                    if (mConfig.getPackageFilter()?.pkgAllow(pkgPair.first)!!) {
-                        fileContent[pkgPair.first] = pkgPair
-                    }
-                    Log.d("Mappings", pkgPair.toString())
-                }
-            }
-            reader.close()
-            return fileContent
-        } catch (e: IOException) {
-            throw RuntimeException("IOException occurred. ", e)
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close()
-                } catch (e: IOException) {
-                    throw RuntimeException("IOException occurred. ", e)
-                }
-
-            }
-        }
-
-    }
-
-    private fun extractPkg(content: String): Pair<String, String> {
+    private fun extractPackageName(content: String): Pair<String, String> {
         if (content.startsWith(" ")) return Pair("", "")
         val index = content.indexOf("->")
         if (index > 0) {
