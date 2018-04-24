@@ -8,6 +8,9 @@ import utils.ConfigFile
 import utils.ConfigImpl
 import utils.TextUtils
 import java.io.FileReader
+import java.util.TreeSet
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 object Main {
 
@@ -22,20 +25,56 @@ object Main {
         val mConfigFile = getConfigJsonFile()
 
         //first apk
-        var mConfig = ConfigImpl()
-        mConfig.aAptFile = mConfigFile.aapt
-        mConfig.mApkDesc = mConfigFile.newApk
-        val mOldClassDescMap = Mappings.mappings.collectMapping(mConfig)
-        println("pkgList:${mOldClassDescMap.size}".plus(",cost:").plus((System.currentTimeMillis() - time)))
+        val mappingsOld = Mappings()
+        val mConfigOld = ConfigImpl()
+        mConfigOld.aAptFile = mConfigFile.aapt
+        mConfigOld.mApkDesc = mConfigFile.oldApk
+        mappingsOld.mConfig = mConfigOld
+        mappingsOld.collectVersions()
+
         //second apk
-        mConfig = ConfigImpl()
-        mConfig.aAptFile = mConfigFile.aapt
-        mConfig.mApkDesc = mConfigFile.newApk
-        val mNewClassDescMap = Mappings.mappings.collectMapping(mConfig)
+        val mConfigNew = ConfigImpl()
+        val mappingsNew = Mappings()
+        mConfigNew.aAptFile = mConfigFile.aapt
+        mConfigNew.mApkDesc = mConfigFile.newApk
+        mappingsNew.mConfig = mConfigNew
+        mappingsNew.collectVersions()
+
+        //diff BuildInPluginVersion
+        val mOldVersionMap = HashMap(mConfigOld.mBuiltInPluginVersionCode)
+
+        val keys = mOldVersionMap.keys
+        for (v in keys) {
+            val mOld = mConfigOld.mBuiltInPluginVersionCode[v]
+            val mNew = mConfigNew.mBuiltInPluginVersionCode[v]
+            if (mOld == mNew) {
+                mConfigOld.mBuiltInPluginVersionCode.remove(v)
+                mConfigNew.mBuiltInPluginVersionCode.remove(v)
+            }
+        }
+
+        //
+        mappingsOld.getMappingFileList()
+        mappingsNew.getMappingFileList()
+        val mOldClassDescMap = mappingsOld.collectMapping()
+        val mNewClassDescMap = mappingsNew.collectMapping()
         println("pkgList:${mNewClassDescMap.size}".plus(",cost:").plus((System.currentTimeMillis() - time)))
+        println("pkgList:${mOldClassDescMap.size}".plus(",cost:").plus((System.currentTimeMillis() - time)))
+        println("开始比较增量")
+        val keySet = TreeSet(mOldClassDescMap.keys)
+        for (key in keySet) {
+            val clazzOld = mOldClassDescMap[key]
+            val clazzNew = mNewClassDescMap[key]
+            if (clazzNew != null && clazzOld != null && clazzNew == clazzOld) {
+                (mOldClassDescMap as HashMap).remove(key)
+                (mNewClassDescMap as HashMap).remove(key)
+            }
+        }
+        println("比较结束:${mOldClassDescMap.size},${mNewClassDescMap.size}")
 
-
-        val reader = DmTraceReader(Mappings.mappings.mConfig.traceFilePath, true)
+        println(mOldClassDescMap["com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18"])
+        println(mNewClassDescMap["com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18"])
+        val reader = DmTraceReader("xxxxx", true)
         val revertMethodList = ArrayList<RevertMethod>()
         reader.setDumpFilter(object : DumpFilter {
             override fun allow(methodData: MethodData): Boolean {
@@ -48,18 +87,16 @@ object Main {
         })
         reader.setFormatListener(object : FormatListener {
             override fun finish() {
-//                for (method in revertMethodList) {
-//                    val classDesc = pkgMap[method.clazzName]
-//                    if (classDesc != null) {
-//                        method.rawClazzName = classDesc.name
-//                    }
-//                }
                 println(Gson().toJson(revertMethodList))
                 println("需要hook函数个数:".plus(revertMethodList.size))
             }
         })
-        reader.generateTrees()
-        println(reader.methods)
+        try {
+            reader.generateTrees()
+            println(reader.methods)
+        } catch (e: Exception) {
+            println(e)
+        }
     }
 
     private fun formatMethod(methodData: MethodData, list: ArrayList<RevertMethod>) {

@@ -8,7 +8,6 @@ import revert.RawClass
 import utils.*
 import utils.apk.ApkUtils
 import java.io.*
-import java.util.*
 import kotlin.collections.set
 
 
@@ -16,103 +15,127 @@ import kotlin.collections.set
  * 对应插件mappings文件处理，提取mappings.txt文件中的class
  */
 class Mappings : IMapping {
-    var mConfig: IConfig = ConfigImpl()
-
-
-    private fun preConfig() {
+    override fun collectVersions() {
         val apkDesc = mConfig.mApkDesc
         mConfig.traceFilePath = apkDesc.traceFile
         mConfig.skipDownloadMapping["com.yy.mobile.qupaishenqu"] = true
-        mConfig.workingDir = "../tmp"
+        val apkFile = File(mConfig.mApkDesc.apkFile)
+
+        if (!File(mConfig.workingDir).exists()) {
+            File(mConfig.workingDir).mkdirs()
+        }
         mConfig.buildBranch = apkDesc.branchName
         if (TextUtils.isEmpty(mConfig.aAptFile)) {
             mConfig.aAptFile = "/home/g8489/Android/sdk/build-tools/26.0.2/aapt"
         }
         val tmpConfig = ApkUtils.getVersionCode(mConfig.aAptFile, apkDesc.apkFile)
         mConfig.mBuiltInPluginVersionCode["host"] = tmpConfig.hostVersion
+        mConfig.hostVersion = tmpConfig.hostVersion
         mConfig.mBuiltInPluginVersionCode.putAll(tmpConfig.mBuiltInPluginVersionCode)
+        mConfig.workingDir = apkFile.parent.plus(File.separator).plus(mConfig.hostVersion).plus(File.separator)
     }
 
-    private fun downloadMappings() {
-        val time = System.currentTimeMillis()
+    var mConfig: IConfig = ConfigImpl()
+
+    override fun getMappingFileList(): ArrayList<String> {
+
+        //repo copy
+        val repoMap = HashMap(mConfig.mBuiltInPluginRepo)
+
+        downloadMappings(object : DownloadUtil.OnDownloadListener {
+            override fun onDownloading(url: String?, progress: Int) {
+
+            }
+
+            override fun onDownloadFailed(url: String?, e: java.lang.Exception?) {
+                val pluginName = getPluginNameByUrl(repoMap, url!!)
+                println("下载失败:$pluginName")
+            }
+
+            override fun onDownloadSuccess(url: String?) {
+                val pluginName = getPluginNameByUrl(repoMap, url!!)
+                println("下载成功:$pluginName")
+            }
+        })
+        return ArrayList()
+    }
+
+    fun getPluginNameByUrl(map: HashMap<String, String>, url: String): String {
+        val set = map.keys
+        for (p in set) {
+            val repo = map[p]!!.replace("%s/", "")
+            if (url.startsWith(repo)) {
+                return p
+            }
+        }
+        return "entmobile"
+    }
+
+
+    private fun downloadMappings(listener: DownloadUtil.OnDownloadListener) {
         if (TextUtils.isEmpty(mConfig.buildBranch)) {
             throw IllegalArgumentException("分支版本号还没指定")
         }
-        try {
-            mConfig.mBuiltInPluginRepo["host"] = "http://repo.yypm.com/dwbuild/mobile/android/entmobile/entmobile-%s/"
-            for (pluginName in mConfig.mBuiltInPluginRepo.keys) {
-                if (mConfig.skipDownloadMapping[pluginName] != null) {
-                    println("使用本地的mapping文件:$pluginName")
-                    continue
-                }
-                val client = OkHttpClient.Builder()
-                        .build()
-                val httpUrl = String.format(mConfig.mBuiltInPluginRepo[pluginName]!!, mConfig.buildBranch)
-                val call = client.newCall(Request.Builder()
-                        .url(httpUrl)
-                        .build())
-                val response = call.execute().body().string().toString()
-                val vCode = mConfig.mBuiltInPluginVersionCode[pluginName].toString()
-                val vCodeIndex = response.indexOf("-".plus(vCode).plus("-r"))
-                if (vCodeIndex == -1) {
-                    println("找不到{$pluginName}:".plus(vCode))
-                } else {
-                    //find first
-                    var c = ""
-                    var left = vCodeIndex
-                    while (c != "\"") {
-                        c = response.substring(left - 1, left)
-                        left--
-                    }
-                    var right = vCodeIndex
-                    //find last
-                    while (c != "/") {
-                        c = response.substring(right, right + 1)
-                        right++
-                    }
-                    val version = response.subSequence(left + 1, right - 1)
-                    val mapping = if (pluginName == "host") {
-                        String.format(mConfig.mBuiltInPluginRepo[pluginName]!!, mConfig.buildBranch)
-                                .plus(version).plus(File.separator).plus("proguard/mapping.txt")
-                    } else {
-                        String.format(mConfig.mBuiltInPluginRepo[pluginName]!!, mConfig.buildBranch)
-                                .plus(version).plus(File.separator).plus("mapping.txt")
-                    }
-                    println("$pluginName:$mapping")
-                    println("开始$pluginName-mapping")
-                    DownloadUtil.get().download(mapping, mConfig.workingDir, pluginName.plus("-").plus(vCode).plus("-"), object : DownloadUtil.OnDownloadListener {
-                        override fun onDownloadFailed(e: Exception) {
-                            println(e.toString())
-                        }
+        mConfig.mBuiltInPluginRepo["host"] = "http://repo.yypm.com/dwbuild/mobile/android/entmobile/entmobile-%s/"
 
-                        override fun onDownloadSuccess() {
-
-                        }
-
-                        override fun onDownloading(progress: Int) {
-//                            print(progress)
-                        }
-                    })
-                }
+        for (pluginName in mConfig.mBuiltInPluginRepo.keys) {
+            if (mConfig.getBuiltInPluginVersionCode().containsKey(pluginName)) {
+                downloadSingleMap(pluginName, mConfig.workingDir, listener)
             }
-        } finally {
-            println(Constant.LOGGER_TAG.plus("mapping链接获取：").plus(System.currentTimeMillis() - time).plus("ms"))
         }
     }
 
-    override fun collectMapping(config: IConfig): Map<String, RawClass> {
-        this.mConfig = config
-        preConfig()
-        downloadMappings()
+    private fun downloadSingleMap(pluginName: String, destPath: String, listener: DownloadUtil.OnDownloadListener) {
+        if (mConfig.skipDownloadMapping[pluginName] != null) {
+            println("使用本地的mapping文件:$pluginName")
+        }
+        val client = OkHttpClient.Builder()
+                .build()
+        val httpUrl = String.format(mConfig.mBuiltInPluginRepo[pluginName]!!, mConfig.buildBranch)
+        val call = client.newCall(Request.Builder()
+                .url(httpUrl)
+                .build())
+        val response = call.execute().body().string().toString()
+        val vCode = mConfig.mBuiltInPluginVersionCode[pluginName].toString()
+        val vCodeIndex = response.indexOf("-".plus(vCode).plus("-r"))
+        if (vCodeIndex == -1) {
+            println("找不到{$pluginName}:".plus(vCode))
+        } else {
+            //find first
+            var c = ""
+            var left = vCodeIndex
+            while (c != "\"") {
+                c = response.substring(left - 1, left)
+                left--
+            }
+            var right = vCodeIndex
+            //find last
+            while (c != "/") {
+                c = response.substring(right, right + 1)
+                right++
+            }
+            val version = response.subSequence(left + 1, right - 1)
+            val mappingUrl = if (pluginName == "host") {
+                String.format(mConfig.mBuiltInPluginRepo[pluginName]!!, mConfig.buildBranch)
+                        .plus(version).plus(File.separator).plus("proguard/mapping.txt")
+            } else {
+                String.format(mConfig.mBuiltInPluginRepo[pluginName]!!, mConfig.buildBranch)
+                        .plus(version).plus(File.separator).plus("mapping.txt")
+            }
+            DownloadUtil.get().download(mappingUrl, destPath, pluginName.plus("-").plus(vCode).plus("-"), listener)
+        }
+    }
+
+    override fun collectMapping(): Map<String, RawClass> {
         val time = System.currentTimeMillis()
-        val map = format(config)
+        val map = format()
         Log.d(Constant.LOGGER_TAG, "parse map 花费时间:".plus(System.currentTimeMillis() - time).plus("ms"))
         return map
     }
 
-    private fun format(config: IConfig): Map<String, RawClass> {
+    private fun format(): Map<String, RawClass> {
         val map = HashMap<String, RawClass>()
-        val fileList = config.getMappings()
+        val fileList = mConfig.getMappings()
         for (path in fileList) {
             map.putAll(collectClassMap(path))
         }
@@ -132,30 +155,37 @@ class Mappings : IMapping {
             var clazz = RawClass()
             var clazzName = ""
             var start = true
+            var lineCnt = 0
             while (true) {
                 val line = reader.readLine() ?: break
-                if (!TextUtils.isEmpty(clazzName) && line.startsWith(" ") && start) {
-                    //field or method
-                    if (line.contains("(")) {
-                        //method
-                        clazz.mList.add(formatMethod(line))
+                lineCnt++
+                try {
+                    if (!TextUtils.isEmpty(clazzName) && line.startsWith(" ") && start) {
+                        //field or method
+//                        println()
+                        if (line.contains("(")) {
+                            //method
+                            clazz.mList.add(formatMethod(line))
+                        } else {
+                            //field
+                            clazz.fList.add(formatField(line))
+                        }
                     } else {
-                        //field
-                        clazz.fList.add(formatField(line))
+                        //pkg
+                        val pair = extractPackageName(line)
+                        if (!TextUtils.isEmpty(pair.first)) {
+                            clazz = RawClass()
+                            clazz.name = pair.first
+                            clazz.pName = pair.second
+                            clazzName = pair.first
+                            start = true
+                            fileContent[clazz.name] = clazz
+                        } else {
+                            start = false
+                        }
                     }
-                } else {
-                    //pkg
-                    val pair = extractPackageName(line)
-                    if (!TextUtils.isEmpty(pair.first)) {
-                        clazz = RawClass()
-                        clazz.name = pair.first
-                        clazz.pName = pair.second
-                        clazzName = pair.first
-                        start = true
-                        fileContent[clazz.name] = clazz
-                    } else {
-                        start = false
-                    }
+                } catch (e: Exception) {
+                    println("出错了:$line,$filePath,$lineCnt,$e")
                 }
             }
             reader.close()
@@ -178,9 +208,14 @@ class Mappings : IMapping {
     private fun formatField(line: String): FieldDesc {
         val array = line.trim().split(" ")
         val fieldDesc = FieldDesc()
-        fieldDesc.type = array[0]
-        fieldDesc.name = array[1]
-        fieldDesc.pName = array[3]
+        try {
+            fieldDesc.type = array[0]
+            fieldDesc.name = array[1]
+            fieldDesc.pName = array[3]
+        } catch (e: IndexOutOfBoundsException) {
+            println("错le0:$line,$e")
+            throw IndexOutOfBoundsException(e.localizedMessage)
+        }
         return fieldDesc
     }
 
@@ -191,8 +226,9 @@ class Mappings : IMapping {
             methodDesc.rType = array[0].substring(array[0].lastIndexOf(":") + 1)
             methodDesc.name = array[1]
             methodDesc.pName = array[3]
-        } catch (e: Exception) {
-            println("错了:${(array)}")
+        } catch (e: IndexOutOfBoundsException) {
+            println("错le:$line,$e")
+            throw IndexOutOfBoundsException(e.localizedMessage)
         }
         return methodDesc
     }
@@ -206,10 +242,6 @@ class Mappings : IMapping {
             return Pair(rawPkg, proPkg.replace(":", ""))
         }
         return Pair("", "")
-    }
-
-    companion object {
-        val mappings = Mappings()
     }
 
 }

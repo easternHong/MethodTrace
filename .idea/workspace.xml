@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6356a549-5554-4610-8e37-7ce706cd9878" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/rxjava_2_1_12_sources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TraceAnalyze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TraceAnalyze.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mapping/IMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/IMapping.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mapping/Mappings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapping/Mappings.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/revert/RevertMethod.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/revert/RevertMethod.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/trace/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/trace/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/DownloadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DownloadUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/IConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/IConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apk/UnzipFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apk/UnzipFiles.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,13 +28,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Mappings.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
+      <file leaf-file-name="Main.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+            <state relative-caret-position="137">
+              <caret line="72" column="27" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="40" />
               <folding>
-                <element signature="e#17#227#0" expanded="true" />
+                <element signature="e#15#318#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,11 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PerformanceMonitorSwitchController</find>
-      <find>StatisticService</find>
-      <find>register</find>
-      <find>onCreate</find>
-      <find>MessageNotifyManager</find>
       <find>updateSwitch</find>
       <find>registerProcessor</find>
       <find>Binder</find>
@@ -78,6 +77,11 @@
       <find>com.yymobile.core.webbus.WebBusYYPProtocol$WebBusYYPReq</find>
       <find>花费时间</find>
       <find>pkgAllow</find>
+      <find>removeall</find>
+      <find>pkgList</find>
+      <find>下载成功</find>
+      <find>workingDir</find>
+      <find>mConfig.hostVersion</find>
     </findStrings>
     <replaceStrings>
       <replace>.</replace>
@@ -121,19 +125,19 @@
         <option value="$PROJECT_DIR$/src/utils/FileUtils.java" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/diff/PackageDiff.kt" />
-        <option value="$PROJECT_DIR$/src/utils/apk/UnzipFiles.java" />
-        <option value="$PROJECT_DIR$/src/utils/DownloadUtil.java" />
         <option value="$PROJECT_DIR$/src/utils/apk/IconUtil.java" />
         <option value="$PROJECT_DIR$/src/utils/ConfigImpl.kt" />
-        <option value="$PROJECT_DIR$/src/test/Test.java" />
-        <option value="$PROJECT_DIR$/src/mapping/IMapping.kt" />
         <option value="$PROJECT_DIR$/src/utils/Log.java" />
-        <option value="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" />
-        <option value="$PROJECT_DIR$/src/utils/IConfig.kt" />
         <option value="$PROJECT_DIR$/src/utils/Constant.java" />
+        <option value="$PROJECT_DIR$/src/test/Test.java" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/src/mapping/Mappings.kt" />
+        <option value="$PROJECT_DIR$/src/utils/apk/UnzipFiles.java" />
+        <option value="$PROJECT_DIR$/src/utils/apk/ApkUtils.java" />
+        <option value="$PROJECT_DIR$/src/utils/DownloadUtil.java" />
+        <option value="$PROJECT_DIR$/src/utils/IConfig.kt" />
+        <option value="$PROJECT_DIR$/src/mapping/IMapping.kt" />
         <option value="$PROJECT_DIR$/src/trace/Main.kt" />
+        <option value="$PROJECT_DIR$/src/mapping/Mappings.kt" />
         <option value="$PROJECT_DIR$/src/revert/RevertMethod.kt" />
       </list>
     </option>
@@ -160,6 +164,11 @@
               <item name="MethodTrace" type="b2602c69:ProjectViewProjectNode" />
               <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MethodTrace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MethodTrace" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -170,10 +179,11 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="flowab&#9;FILE&#9;jar:///home/g8489/Downloads/MethodTrace/lib/rxjava-2.1.12-sources.jar!/io/reactivex/internal/operators/flowable" />
     <property name="last_opened_file_path" value="$USER_HOME$/proguard4.7" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
@@ -319,8 +329,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.trace.Main" />
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.ApkUtils" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Kotlin.diff.PackageDiff" />
         <item itemvalue="Application.FileUtils" />
       </list>
@@ -350,17 +360,17 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3840345" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2793959" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32901832" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.60841423" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09905922" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24681793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49946064" weight="0.24958494" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42394823" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.6806904" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50053936" side_tool="true" weight="0.24958494" />
@@ -372,30 +382,30 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329602" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.55987054" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279396" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13779746" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50053936" side_tool="true" weight="0.24958494" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2793959" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49946064" weight="0.24958494" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24681793" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32901832" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329602" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5329018" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.6806904" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50053936" side_tool="true" weight="0.24958494" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.60841423" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32901832" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.6092573" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3279396" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
@@ -412,8 +422,14 @@
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/trace/Main.kt</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="221" />
+      <option name="time" value="258" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -422,6 +438,16 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>pair.first==&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(pair.first.equals(&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;))</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>key==&quot;com.yy.mobile.ui.gallery.PhotoUploadActivity&quot;</expression-string>
         <language-id>kotlin</language-id>
@@ -448,104 +474,65 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
+    <expressions id="watch">
+      <expression>
+        <expression-string>map[p]</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>File(&quot;../../../../config.json&quot;).exists()</expression-string>
+        <expression-string>mOldClassDescMap[&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;].toString().plus(&quot;\n&quot;).plus(mNewClassDescMap[&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;].toString())</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>File(&quot;../../../config.json&quot;).exists()</expression-string>
+        <expression-string>mOldClassDescMap[&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;].toString()</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>File(&quot;../config.json&quot;).exists()</expression-string>
+        <expression-string>mOldClassDescMap[&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;]==mNewClassDescMap[&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;]</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>File(&quot;../../config.json&quot;).exists()</expression-string>
+        <expression-string>mOldClassDescMap[&quot;com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18&quot;]</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>File(&quot;../../config.json&quot;)</expression-string>
+        <expression-string>mConfig</expression-string>
         <language-id>kotlin</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>map.get(&quot;android.arch.lifecycle.BuildConfig&quot;)</expression-string>
-        <language-id>kotlin</language-id>
+        <expression-string>apkFile.getParent() + &quot;/&quot; + apkInfo.getVersionCode()</expression-string>
+        <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>map.get(&quot;android.app.ActivityThread&quot;)</expression-string>
+        <expression-string>mNewClassDescMap.get(&quot;com.yy.game.ui.livetabviewpager.anchortab.model.AnchorTeamModel&quot;)</expression-string>
         <language-id>kotlin</language-id>
+        <custom-info>import java.util.HashMap</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>reader.methods</expression-string>
+        <expression-string>mNewClassDescMap.get(&quot;com.yy.game.ui.livetabviewpager.anchortab.model.AnchorTeamModel&quot;) == mOldClassDescMap.get(&quot;com.yy.game.ui.livetabviewpager.anchortab.model.AnchorTeamModel&quot;)</expression-string>
         <language-id>kotlin</language-id>
+        <custom-info>import java.util.HashMap</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>response.body().string()</expression-string>
+        <expression-string>mNewClassDescMap.get(&quot;com.yy.game.ui.livetabviewpager.anchortab.model.AnchorTeamModel&quot;)==mOldClassDescMap.get(&quot;com.yy.game.ui.livetabviewpager.anchortab.model.AnchorTeamModel&quot;)</expression-string>
         <language-id>kotlin</language-id>
+        <custom-info>import java.util.HashMap</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/trace/DmTraceReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5258">
-          <caret line="239" selection-start-line="239" selection-end-line="239" />
-          <folding>
-            <element signature="e#2419#2420#0" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2626#2627#0" expanded="true" />
-            <element signature="e#27728#27729#0" expanded="true" />
-            <element signature="e#27765#27766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trace/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trace/Call.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1404">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trace/TraceUnits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trace/ProfileData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -672,20 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trace/DmTraceReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="67" column="66" selection-start-line="67" selection-start-column="66" selection-end-line="67" selection-end-column="66" />
-          <folding>
-            <element signature="e#2419#2420#0" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2626#2627#0" expanded="true" />
-            <element signature="e#27728#27729#0" expanded="true" />
-            <element signature="e#27765#27766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/utils/apk/ImpliedFeature.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -750,20 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/apk/UnzipFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/text/Strings.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3630">
-          <caret line="972" column="24" selection-start-line="972" selection-start-column="24" selection-end-line="972" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/apk/IconUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -771,37 +730,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/DownloadUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
           <caret line="77" column="27" selection-start-line="53" selection-start-column="7" selection-end-line="77" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapping/IMapping.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-          <folding>
-            <element signature="e#17#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,23 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/apk/ApkUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="203" selection-start-line="203" selection-end-line="203" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ConfigImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Constant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -840,43 +755,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/IConfig.kt">
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/HashMap.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="302">
+          <caret line="379" column="19" selection-start-line="379" selection-start-column="19" selection-end-line="379" selection-end-column="19" />
+          <folding>
+            <element signature="e#3315#3316#0" expanded="true" />
+            <element signature="e#3354#3355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="287" column="17" selection-start-line="287" selection-start-column="17" selection-end-line="287" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/text/Strings.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="1041" column="19" selection-start-line="1041" selection-start-column="15" selection-end-line="1041" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/io/Console.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2816">
+          <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trace/DmTraceReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+          <folding>
+            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="e#2640#2641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/apk/UnzipFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="709">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+        <state relative-caret-position="88">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
+    <entry file="jar://$PROJECT_DIR$/lib/rxjava-2.1.12-sources.jar!/io/reactivex/BackpressureOverflowStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+        <state relative-caret-position="132">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/rxjava-2.1.12.jar!/io/reactivex/FlowableSubscriber.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/DownloadUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/apk/ApkUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
           <folding>
-            <element signature="e#15#223#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapping/IMapping.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ConfigImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/IConfig.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/revert/RevertMethod.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+        <state relative-caret-position="685">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mapping/Mappings.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
-          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+          <caret line="128" column="51" selection-start-line="128" selection-start-column="51" selection-end-line="128" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trace/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="72" column="27" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="40" />
           <folding>
-            <element signature="e#17#227#0" expanded="true" />
+            <element signature="e#15#318#0" expanded="true" />
           </folding>
         </state>
       </provider>

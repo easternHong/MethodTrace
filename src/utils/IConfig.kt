@@ -10,10 +10,6 @@ abstract class IConfig {
      */
     abstract fun getMappings(): List<String>
 
-    fun setMappings(mappingsFilePaths: ArrayList<String>) {
-        this.mappingsFilePaths = mappingsFilePaths
-    }
-
     var mApkDesc = ApkDesc("", "", "", "")
     var traceFilePath = ""
     var hostVersion: String = ""
@@ -47,7 +43,7 @@ abstract class IConfig {
         mBuiltInPlugins["com.yy.mobile.plugin.moment"] = "com.yy.mobile.plugin.moment"
         mBuiltInPlugins["com.yy.mobile.plugin.main"] = "com.yy.mobile.plugin.main"
         mBuiltInPlugins["com.yy.mobile.plugin.im"] = "com.yy.mobile.plugin.im"
-        mBuiltInPlugins["com.yy.mobile.plugin.dolls"] = "com.yy.mobile.plugin.dolls"
+//        mBuiltInPlugins["com.yy.mobile.plugin.dolls"] = "com.yy.mobile.plugin.dolls"
         mBuiltInPlugins["com.duowan.mobile.entlive"] = "com.duowan.mobile.entlive"
 
         mBuiltInPluginRepo["com.yy.mobile.share"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginshare/pluginshare-%s/"
@@ -59,7 +55,7 @@ abstract class IConfig {
         mBuiltInPluginRepo["com.yy.mobile.plugin.onepiece"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginonepiece/pluginonepiece-%s/"
         mBuiltInPluginRepo["com.yy.mobile.plugin.moment"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginmoment/pluginmoment-%s/"
         mBuiltInPluginRepo["com.yy.mobile.plugin.im"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginim/pluginim-%s/"
-        mBuiltInPluginRepo["com.yy.mobile.plugin.dolls"] = "http://repo.yypm.com/dwbuild/mobile/android/plugindolls/plugindolls-%s/"
+//        mBuiltInPluginRepo["com.yy.mobile.plugin.dolls"] = "http://repo.yypm.com/dwbuild/mobile/android/plugindolls/plugindolls-%s/"
         mBuiltInPluginRepo["com.duowan.mobile.entlive"] = "http://repo.yypm.com/dwbuild/mobile/android/pluginentlive/pluginentlive-%s/"
     }
 

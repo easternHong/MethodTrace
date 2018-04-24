@@ -10,5 +10,7 @@
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="com.squareup.okhttp3:okhttp:3.3.0" level="project" />
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.1" level="project" />
+    <orderEntry type="library" name="rxjava-2.1.12-sources" level="project" />
+    <orderEntry type="library" name="rxjava-2.1.12" level="project" />
   </component>
 </module>

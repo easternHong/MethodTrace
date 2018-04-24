@@ -1,7 +1,6 @@
 package mapping
 
 import revert.RawClass
-import utils.IConfig
 
 
 interface IMapping {
@@ -9,5 +8,9 @@ interface IMapping {
     /**
      * 从mapping文件中解析出所有的类
      */
-    fun collectMapping(config: IConfig): Map<String, RawClass>
+    fun collectMapping(): Map<String, RawClass>
+
+    fun getMappingFileList(): ArrayList<String>
+
+    fun collectVersions()
 }

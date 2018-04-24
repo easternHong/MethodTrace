@@ -41,6 +41,10 @@ class FieldDesc {
         return result
     }
 
+    override fun toString(): String {
+        return "FieldDesc(type='$type', name='$name', pName='$pName')"
+    }
+
 }
 
 class MethodDesc {
@@ -67,6 +71,10 @@ class MethodDesc {
         result = 31 * result + pName.hashCode()
         result = 31 * result + rType.hashCode()
         return result
+    }
+
+    override fun toString(): String {
+        return "MethodDesc(name='$name', pName='$pName', rType='$rType')"
     }
 
 }
@@ -96,6 +104,10 @@ class RawClass {
         result = 31 * result + fList.hashCode()
         result = 31 * result + mList.hashCode()
         return result
+    }
+
+    override fun toString(): String {
+        return "RawClass(name='$name', pName='$pName', fList=$fList, mList=$mList)"
     }
 
 }

@@ -202,9 +202,13 @@ public class ApkUtils {
             System.out.println(apkInfo.getPackageName() + ",host:" + apkInfo.getVersionCode());
             config.setHostVersion(apkInfo.getVersionCode());
             System.out.println("开始解压apk文件");
-            UnzipFiles.unpackZip(apkFile.getParent() + "/", apkFile.getName());
+            File dir = new File(apkFile.getParent() + "/" + apkInfo.getVersionCode() + "/");
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            UnzipFiles.unzip(apkPath, apkFile.getParent() + "/" + apkInfo.getVersionCode());
             System.out.println("解压apk文件结束");
-            File[] files = new File(apkFile.getParent() + "/lib/armeabi-v7a").listFiles((file, s) -> {
+            File[] files = new File(apkFile.getParent() + "/" + apkInfo.getVersionCode() + "/lib/armeabi-v7a").listFiles((file, s) -> {
                 final String pkgName = s.replace("lib", "")
                         .replace("_", ".")
                         .replace(".so", "").replace(" ", "");
