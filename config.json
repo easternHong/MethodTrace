@@ -1,10 +1,10 @@
 {
   "aapt": "/home/g8489/Android/sdk/build-tools/26.0.2/aapt",
   "oldApk": {
-    "apkFile": "/home/g8489/mappings/对比/yymobile_client-7.7.0-SNAPSHOT-60253-official.apk",
+    "apkFile": "/home/g8489/mappings/对比/yymobile_client-7.7.0-SNAPSHOT-60120-official.apk",
     "version": "",
     "traceFile": "/home/g8489/mappings/对比/59724/com.yy.mobile.plugin.main-20180419-122250.trace",
-    "branchName": "android_7.7.0_maint"
+    "branchName": "android_7.7.0_dior_feature"
   },
   "newApk": {
     "apkFile": "/home/g8489/mappings/对比/yymobile_client-7.7.0-SNAPSHOT-60257-official.apk",

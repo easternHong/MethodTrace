@@ -13,4 +13,6 @@ interface IMapping {
     fun getMappingFileList(): ArrayList<String>
 
     fun collectVersions()
+
+    fun getNewClass(): Map<String, RawClass>
 }

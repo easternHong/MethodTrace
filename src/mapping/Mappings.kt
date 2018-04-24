@@ -15,15 +15,16 @@ import kotlin.collections.set
  * 对应插件mappings文件处理，提取mappings.txt文件中的class
  */
 class Mappings : IMapping {
+
+    override fun getNewClass(): Map<String, RawClass> {
+        return HashMap()
+    }
+
     override fun collectVersions() {
         val apkDesc = mConfig.mApkDesc
         mConfig.traceFilePath = apkDesc.traceFile
         mConfig.skipDownloadMapping["com.yy.mobile.qupaishenqu"] = true
         val apkFile = File(mConfig.mApkDesc.apkFile)
-
-        if (!File(mConfig.workingDir).exists()) {
-            File(mConfig.workingDir).mkdirs()
-        }
         mConfig.buildBranch = apkDesc.branchName
         if (TextUtils.isEmpty(mConfig.aAptFile)) {
             mConfig.aAptFile = "/home/g8489/Android/sdk/build-tools/26.0.2/aapt"
@@ -33,6 +34,9 @@ class Mappings : IMapping {
         mConfig.hostVersion = tmpConfig.hostVersion
         mConfig.mBuiltInPluginVersionCode.putAll(tmpConfig.mBuiltInPluginVersionCode)
         mConfig.workingDir = apkFile.parent.plus(File.separator).plus(mConfig.hostVersion).plus(File.separator)
+        if (!File(mConfig.workingDir).exists()) {
+            File(mConfig.workingDir).mkdirs()
+        }
     }
 
     var mConfig: IConfig = ConfigImpl()
@@ -41,7 +45,13 @@ class Mappings : IMapping {
 
         //repo copy
         val repoMap = HashMap(mConfig.mBuiltInPluginRepo)
-
+        val oldList = mConfig.getMappings()
+        for (i in oldList) {
+            val f = File(i)
+            if (f.exists()) {
+                f.delete()
+            }
+        }
         downloadMappings(object : DownloadUtil.OnDownloadListener {
             override fun onDownloading(url: String?, progress: Int) {
 
@@ -142,6 +152,7 @@ class Mappings : IMapping {
         return map
     }
 
+    @Synchronized
     private fun collectClassMap(filePath: String): Map<String, RawClass> {
         val file = File(filePath)
         val fileContent = HashMap<String, RawClass>()
@@ -165,7 +176,10 @@ class Mappings : IMapping {
 //                        println()
                         if (line.contains("(")) {
                             //method
-                            clazz.mList.add(formatMethod(line))
+                            val m = formatMethod(line, clazz.dartsInner)
+                            if (m != null && !m.name.isEmpty()) {
+                                clazz.mList.add(m)
+                            }
                         } else {
                             //field
                             clazz.fList.add(formatField(line))
@@ -177,6 +191,7 @@ class Mappings : IMapping {
                             clazz = RawClass()
                             clazz.name = pair.first
                             clazz.pName = pair.second
+                            clazz.dartsInner = pair.third
                             clazzName = pair.first
                             start = true
                             fileContent[clazz.name] = clazz
@@ -219,13 +234,16 @@ class Mappings : IMapping {
         return fieldDesc
     }
 
-    private fun formatMethod(line: String): MethodDesc {
+    private fun formatMethod(line: String, darts: Boolean): MethodDesc {
         val methodDesc = MethodDesc()
         val array = line.trim().split(" ")
         try {
+            if (darts && line.contains("Impl access\$")) {
+                methodDesc.name = "access"
+                methodDesc.pName = "access"
+            }
             methodDesc.rType = array[0].substring(array[0].lastIndexOf(":") + 1)
-            methodDesc.name = array[1]
-            methodDesc.pName = array[3]
+
         } catch (e: IndexOutOfBoundsException) {
             println("错le:$line,$e")
             throw IndexOutOfBoundsException(e.localizedMessage)
@@ -233,15 +251,29 @@ class Mappings : IMapping {
         return methodDesc
     }
 
-    private fun extractPackageName(content: String): Pair<String, String> {
-        if (content.startsWith(" ")) return Pair("", "")
+    private fun extractPackageName(content: String): Triple<String, String, Boolean> {
+        if (content.startsWith(" ")) return Triple("", "", false)
         val index = content.indexOf("->")
         if (index > 0) {
-            val rawPkg = content.substring(0, index).replace(" ", "")
-            val proPkg = content.substring(index + 2).replace(" ", "")
-            return Pair(rawPkg, proPkg.replace(":", ""))
+            val rawPkg = handleDart(content.substring(0, index).replace(" ", ""))
+            val proPkg = handleDart(content.substring(index + 2).replace(" ", ""))
+            return Triple(rawPkg.first, proPkg.first.replace(":", ""), rawPkg.second)
         }
-        return Pair("", "")
+        return Triple("", "", false)
     }
 
+    val REGEX = "\$\$\$DartsFactory\$\$\$"
+
+    private fun handleDart(content: String): Pair<String, Boolean> {
+        //com.yy.android.sniper.apt.darts.yymobile_core$$$DartsFactory$$$8986d5ab57efc76ddbf1ea6237319abc$FreeDataServiceImplDartsInnerInstance
+        //com.yy.android.sniper.apt.darts.yymobile_8986d5ab57efc76ddbf1ea6237319abc$FreeDataServiceImplDartsInnerInstance
+        if (content.contains(REGEX)) {
+            val startIndex = content.indexOf(REGEX)
+            return Pair(content.substring(0, startIndex)
+                    .plus("DartsFactory")
+                    .plus(content.substring(startIndex + REGEX.length + 32)).replace("$", "")
+                    .replace(":", ""), true)
+        }
+        return Pair(content, false)
+    }
 }

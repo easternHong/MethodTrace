@@ -1,42 +1,13 @@
 package test;
 
-import kotlin.text.Charsets;
-import utils.CloseUtils;
-import utils.Log;
-
-import java.io.*;
-
 public class Test {
 
 
     public static void main(String[] args) {
-        String filePath = "/home/g8489/mappings/ycloud-mappings.txt";
-        File file = new File(filePath);
-        StringBuilder fileContent = new StringBuilder("");
-        if (!file.isFile()) {
-            return;
-        }
-        BufferedReader reader = null;
-        InputStreamReader is = null;
-        try {
-            is = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8.name());
-            reader = new BufferedReader(is);
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                if (!line.startsWith(" ")) {
-                    String[] array = line.split("->");
-                    if (!equals(array[0].replace(" ", ""), array[1].replace(" ", "").replace(":", "q"))) {
-                        System.out.println(line);
-                    }
-                }
-            }
-            reader.close();
-        } catch (IOException e) {
-            Log.e("", "IOException occurred. ");
-        } finally {
-            CloseUtils.close(is);
-            CloseUtils.close(reader);
-        }
+//
+        final String content = "com.yy.android.sniper.apt.darts.yymobile_core$$$DartsFactory$$$8986d5ab57efc76ddbf1ea6237319abc$FreeDataServiceImplDartsInnerInstance";
+        final String tmp = "$$$DartsFactory$$$";
+        System.out.println(content.substring(content.indexOf(tmp) + tmp.length()));
     }
 
     public static boolean equals(CharSequence a, CharSequence b) {

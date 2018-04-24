@@ -8,7 +8,7 @@ import utils.ConfigFile
 import utils.ConfigImpl
 import utils.TextUtils
 import java.io.FileReader
-import java.util.TreeSet
+import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -24,7 +24,7 @@ object Main {
         val time = System.currentTimeMillis()
         val mConfigFile = getConfigJsonFile()
 
-        //first apk
+        //1.oldVersionApk 信息收集
         val mappingsOld = Mappings()
         val mConfigOld = ConfigImpl()
         mConfigOld.aAptFile = mConfigFile.aapt
@@ -32,7 +32,7 @@ object Main {
         mappingsOld.mConfig = mConfigOld
         mappingsOld.collectVersions()
 
-        //second apk
+        //1.newVersionApk 信息收集
         val mConfigNew = ConfigImpl()
         val mappingsNew = Mappings()
         mConfigNew.aAptFile = mConfigFile.aapt
@@ -41,6 +41,7 @@ object Main {
         mappingsNew.collectVersions()
 
         //diff BuildInPluginVersion
+        //3.下载host和内置插件mapping文件前，删除相同版本的内置插件。
         val mOldVersionMap = HashMap(mConfigOld.mBuiltInPluginVersionCode)
 
         val keys = mOldVersionMap.keys
@@ -53,7 +54,7 @@ object Main {
             }
         }
 
-        //
+        //4.提取mapping文件集合
         mappingsOld.getMappingFileList()
         mappingsNew.getMappingFileList()
         val mOldClassDescMap = mappingsOld.collectMapping()
@@ -61,19 +62,35 @@ object Main {
         println("pkgList:${mNewClassDescMap.size}".plus(",cost:").plus((System.currentTimeMillis() - time)))
         println("pkgList:${mOldClassDescMap.size}".plus(",cost:").plus((System.currentTimeMillis() - time)))
         println("开始比较增量")
+        //5.删除两个版本没有改动的类信息(mapping文件描述相同)
         val keySet = TreeSet(mOldClassDescMap.keys)
         for (key in keySet) {
             val clazzOld = mOldClassDescMap[key]
+            clazzOld?.fList?.sort()
+            clazzOld?.mList?.sort()
             val clazzNew = mNewClassDescMap[key]
-            if (clazzNew != null && clazzOld != null && clazzNew == clazzOld) {
+            clazzNew?.fList?.sort()
+            clazzNew?.mList?.sort()
+            if (clazzNew != null && clazzOld != null && clazzNew == clazzOld ||
+                    (key.contains("\$EventBinder\$") || key.contains("DartsFactory"))) {
                 (mOldClassDescMap as HashMap).remove(key)
                 (mNewClassDescMap as HashMap).remove(key)
+            } else {
+                //删除剩余类集合中相同的field和methods
+                for (i in clazzOld?.fList!!) {
+                    clazzNew?.fList?.remove(i)
+                }
+                for (i in clazzOld.mList) {
+                    clazzNew?.mList?.remove(i)
+                }
+                if (clazzNew?.fList != null && clazzNew.fList.isEmpty() && clazzNew.mList.isEmpty()) {
+                    (mNewClassDescMap as HashMap).remove(key)
+                }
             }
         }
-        println("比较结束:${mOldClassDescMap.size},${mNewClassDescMap.size}")
+        println("旧&删除:${mOldClassDescMap.size}处,新增&更改:${mNewClassDescMap.size}处")
 
-        println(mOldClassDescMap["com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18"])
-        println(mNewClassDescMap["com.yy.mobile.ui.startask.WeekTaskAccess\$\$EventBinder\$18"])
+        //6.对于RxBus，同一个类，匿名内部类的名字可能每次都不一样。
         val reader = DmTraceReader("xxxxx", true)
         val revertMethodList = ArrayList<RevertMethod>()
         reader.setDumpFilter(object : DumpFilter {
