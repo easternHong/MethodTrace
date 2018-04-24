@@ -71,8 +71,8 @@ object Main {
             val clazzNew = mNewClassDescMap[key]
             clazzNew?.fList?.sort()
             clazzNew?.mList?.sort()
-            if (clazzNew != null && clazzOld != null && clazzNew == clazzOld ||
-                    (key.contains("\$EventBinder\$") || key.contains("DartsFactory"))) {
+            var filterGod = (key.contains("\$EventBinder\$") || key.contains("DartsFactory")) && false
+            if (clazzNew != null && clazzOld != null && clazzNew == clazzOld || filterGod) {
                 (mOldClassDescMap as HashMap).remove(key)
                 (mNewClassDescMap as HashMap).remove(key)
             } else {
@@ -88,7 +88,7 @@ object Main {
                 }
             }
         }
-        println("旧&删除:${mOldClassDescMap.size}处,新增&更改:${mNewClassDescMap.size}处")
+        println("废弃&删除:${mOldClassDescMap.size}处,新增&更改:${mNewClassDescMap.size}处")
 
         //6.对于RxBus，同一个类，匿名内部类的名字可能每次都不一样。
         val reader = DmTraceReader("xxxxx", true)
